@@ -1,25 +1,21 @@
 import React from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import { NavBar } from "./NavBar.jsx";
+import { Jumbotron } from "./Jumbotron.jsx";
+import { Cards } from "./Cards.jsx";
+import { Footer } from "./Footer.jsx";
 
-//create your first component
 const Home = () => {
+	// Codigo para crear el placeholder de las 4 cards
+	let arrayPlaceholder = [{title: 'card-title', subtitle: 'Lorem ipsum', label: 'Find Out More!', image: 'https://placehold.co/500x325'}];
+
+	arrayPlaceholder = Array(4).fill().map(() => arrayPlaceholder[0]);
+	
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
+		<NavBar />
+		<Jumbotron />
+		<Cards valores={arrayPlaceholder}/>
+		<Footer />
 	);
 };
 
